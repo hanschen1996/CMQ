@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>CMQ</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/style.css')}}" type="text/css" rel="stylesheet"  media="screen,projection"/>
+  <!-- <link href="{{ url_for('static', filename='css/cmq.css')}}" type="text/css" rel="stylesheet"  media="screen,projection"/> -->
+  <!--<link href="{{ url_for('static', filename='css/materialize.css')}}" type="text/css" rel="stylesheet"  media="screen,projection"/>
+  <link href="{{ url_for('static', filename='css/materialize.min.css')}}" type="text/css" rel="stylesheet"  media="screen,projection"/> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+  <style>
+#home{
+  text-align: center;
+  margin: 0px;
+  width: 100%;
+}
+
+#joinq{
+  /*background-color: #73d371;*/
+  background: linear-gradient(#57ce65 0%, #4dce5f 51%, #46b750 90%);
+  height: 600px;
+  /*background-image: url("../images/joinqwhite.png");*/
+/*  background-image: url("../images/joinqblack.png");
+  background-repeat: no-repeat;
+  background-position: 170px 300px;*/ 
+/*    -webkit-transition: background 1s ease-out;  
+    -moz-transition: background 1s ease-out;  
+    -o-transition: background 1s ease-out; */ 
+    transition: background 1s ease-out; 
+    background-size:1px 600px;
+    border: 1px solid #46b750;  
+    /*cursor:pointer;  */
+    /*width: 150px;  */
+    height: 600px; 
+}
+#joinq h3, #createq h3{
+    transition: font 0.3s ease;
+    /*height:900px;*/
+}
+
+#joinq h3:hover{
+  font-size: 48px;
+  /*background-position:-6000px;*/
+  /*background: linear-gradient(#60d86b 0%, #55d861 51%, #4cbf52 90%);*/
+  /*width:700px;*/
+}
+
+#joinq h3, #createq h3{
+  color: white;
+  font-weight: 200;
+  /*vertical-align: middle;*/
+  line-height: 450px;
+}
+
+#createq{
+  /*background-color: #71b2d3;*/
+  background: linear-gradient(#28c6b6 0%, #1fc8db 51%, #2cb5e8 90%);
+  height: 600px;
+  /*background-image: url("../images/createq.png");*/
+/*  background-repeat: no-repeat;
+  background-position: 270px 290px;*/
+  transition: background-color 0.4s ease;
+}
+
+#createq h3:hover{
+  font-size: 48px;
+  /*background-color: #61a6c1;*/
+}
+
+#logo{
+  margin-left: 110px;
+  font-family: Helvetica Neue, sans-serif;
+  font-weight: 400;
+}
+
+label.qtype{
+  margin-left: 75px;
+}
+
+label.qtype-left{
+  margin-left: 0px;
+}
+
+.myContainer{
+  padding:30px 50px;
+  margin: 50px;
+}
+
+#createqform{
+  padding: 20px 35px;
+  margin-top: -1.0rem;
+}
+
+#managementNote{
+  color: #666666;
+  background-color: #f2f2f2;
+  padding:10px 20px 10px 110px;
+  /*display:;*/
+  /*margin-left: 20px;*/
+}
+
+#managementNote p{
+  display: inline;
+}
+
+#managementNote a{
+  margin-left: 710px;
+  font-size: 14px;
+  padding: ;
+  /*float:right;*/
+  /*margin-bottom: 15px;*/
+}
+
+
+#queueContainer{
+  padding:10px 50px;
+  margin: 10px 50px;
+}
+
+.bigNumber{
+  margin: 0px auto;
+  font-size:140px;
+  font-weight: 900;
+  height: 200px;
+  /*color: rgb(38, 166, 154);*/
+}
+
+.capacityDisplay{
+  text-align: center;
+  margin-top: -70px;
+}
+
+.capacityDisplay p{
+  text-align: center;
+  display: inline;
+}
+
+.capacityDisplayInQ{
+  text-align: center;
+  margin-top: -40px;
+}
+
+.capacityDisplayInQ p{
+  text-align: center;
+  display: inline;
+}
+
+
+#outof{
+  font-size:40px;
+  font-weight: 400;
+  margin-left: -25px;
+}
+
+.pplCurrentlyInQ{
+  margin-top: -30px;
+}
+
+#urCurrently{
+  margin-bottom: -30px;
+}
+
+.browseq{
+  /*height: 400px;*/
+}
+
+td, th{
+  padding: 10px 20px;
+}
+
+.waitTime{
+  /*text-align: center;*/
+}
+
+.card .card-image img{
+  width: 100px;
+  /*padding: 10px auto;*/
+
+}
+
+.card .card-content{
+  padding-top: 0px;
+}
+
+.joinIcon{
+  padding-top: 20px;
+  margin-left: 75px;
+}
+
+.card-content{
+  text-align: center;
+}
+/*
+#cmqLogo{
+  margin-left: 110px;
+}*/
+
+#deq{
+  /*margin-left: 85px;*/
+  margin-bottom: 6px;
+  margin-top: 10px;
+}
+
+#managerHeader{
+  margin-bottom: 0px;
+}
+
+hr{
+  color: #666666;
+}
+
+#listTitle{
+  /*display:inline;*/
+  margin-left: 66px;
+  /*margin-top: 40px;*/
+}
+
+.qicon{
+  /*margin-top: 50px;*/
+  position: absolute;
+}
+
+#logout{
+  margin-right:100px;
+}
+
+#radioButtons{
+  margin-left: 10px;
+}
+
+#qtypeLabel{
+  color: rgb(158, 158, 158);
+  font-size: 14px;
+}
+
+#createqButton{
+  margin-left: 10px;
+}
+
+.inq{
+  cursor: default;
+}
+
+#bg{
+  /*position: absolute;*/
+}
+
+#loginPrompt{
+  position: absolute;
+  margin-top: -470px;
+  margin-left: 385px;
+  padding: 50px;
+  width: 520px;
+  /*padding: 100px 230px;*/
+}
+
+input[type="password"]
+{
+  -webkit-text-security: disc;
+}
+
+#loginFooter{
+  margin-top: -10px;
+}
+
+footer.page-footer .footer-copyright{
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+footer.page-footer{
+  padding-top: 10px;
+}
+
+footer.page-footer p {
+  text-align: center;
+}
+
+#createqIcon{
+  margin-left: -50px;
+  position: absolute;
+  margin-top:-200px;
+}
+
+#joinqIcon{
+  margin-left: -140px;
+  position: absolute;
+  margin-top:-190px;
+}
+  </style>
+</head>
+<body>
+<ul id="dropdown1" class="dropdown-content">
+<li><a href="{{url_for('viewq')}}">Manage Queue </a></li>
+  <li><a href="{{url_for('logout')}}">Logout</a></li>
+</ul>
+
+  <nav class="red darken-4" role="navigation">
+    <div class="nav-wrapper">
+      <a id="logo" href="{{url_for('index')}}" class="brand-logo">CMQueue</a>
+      <ul class="right hide-on-med-and-down">
+      <!-- Dropdown Trigger -->
+      <li><a class="dropdown-button" href="" id="logout" data-beloworigin="true" data-activates="dropdown1">{{user}}<i class="material-icons right">arrow_drop_down</i></a></li>
+    </ul>
+    </div>
+  </nav>
+
+  <div id="managementNote">
+    <p> You are managing this queue.</p>
+    <a href="index.html" class=" red accent-3 waves-effect waves-light btn">End Queue</a>
+  </div>
+
+  <div class="section no-pad-bot no-pad-top" id="queueContainer">
+    <div class="row">
+      <div class="col s6">
+        <h5 style="display:inline;"> Queue: {{name}}</h5>
+        <form method = "post" action = "/managerdeq">
+        <button href="{{url_for('managerdeq')}}" class="waves-effect waves-light btn" name = "deqlistname" id="deq" type = "submit" value = "{{name}}">
+        Dequeue</button> 
+        </form>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s6">
+        <div class="card">
+          <div class="collection">
+            {% for name in newqueue %}
+            <li class="collection-item"> {{name}} </li>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      <div class="col s6">
+        <h5><strong>Queue Description</h5></strong></h5>
+        <p>{{description}} </p>
+        <br />
+        <div class="capacityDisplay">
+          <!-- <h6>There are</h6> -->
+          <p class="bigNumber" style = ""> {{size}} </p>
+          <h6 class="pplCurrentlyInQ">people currently in queue</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- 
+  <div class="container">
+    <div class="section">
+
+      <div class="row">
+      </div>
+
+    </div>
+    
+  </div> -->
+
+  <footer class="page-footer  blue-grey darken-2">
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="red-text text-lighten-2">Yeee</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <!--<script src="{{url_for('static', filename='js/materialize.js')}}"></script>-->
+  <script src="{{url_for('static', filename='js/init.js')}}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+  </body>
+</html>
