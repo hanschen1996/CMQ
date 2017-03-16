@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # cmq
 CMQ (Carnegie Mellon Queues) is an interactive website that maintains a database of queues for the public facilities/spaces
 of Carnegie Mellon University. It was programmed using Python, Flask, HTML/CSS, SQL and Microsoft Azure.
@@ -21,3 +22,6 @@ After installing pip, enter the following commands
 % pip install plotly
 % pip install Flask
 % pip install flask flask-sqlalchemy
+=======
+# CMQ
+>>>>>>> 055bffdbb8acf6022ddc5371c2b921d66ba776f8
